@@ -1,0 +1,6 @@
+﻿node_modules/
+.env
+.linkedin_automation_profile/
+.chrome_profile/
+linkedin_auth.json
+output/*.png

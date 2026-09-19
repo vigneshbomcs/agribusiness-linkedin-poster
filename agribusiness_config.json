@@ -1,0 +1,50 @@
+{
+  "current_pillar_index": 0,
+  "pillars": [
+    {
+      "id": 0,
+      "name": "Agri-Tech precision drones",
+      "search_query": "agricultural drones precision farming multispectral spraying autonomous yield",
+      "target_audience": "AgTech investors, farm managers, agricultural drone operators, agronomists",
+      "metrics_focus": "hectare spraying efficiency, chemical reduction %, multispectral NDVI resolution, ROI per acre",
+      "accent_color": "#1B5E20",
+      "hashtags": [
+        "#AgTech",
+        "#PrecisionAgriculture",
+        "#DronesInAg",
+        "#SmartFarming",
+        "#AgriInnovation"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Food value chain and supply chain inefficiencies",
+      "search_query": "food supply chain cold chain post harvest loss grain freight food waste",
+      "target_audience": "Supply chain executives, food distributors, commodity traders, ag logistics heads",
+      "metrics_focus": "post-harvest loss rates %, cold chain temperature excursion losses, ton-mile logistics costs, shelf-life extension days",
+      "accent_color": "#E65100",
+      "hashtags": [
+        "#SupplyChain",
+        "#FoodLogistics",
+        "#ColdChain",
+        "#FoodWaste",
+        "#Agribusiness"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Corporate ESG sustainability reporting",
+      "search_query": "corporate ESG agriculture sustainability reporting Scope 3 carbon soil EUDR",
+      "target_audience": "Chief Sustainability Officers (CSOs), ESG analysts, agri-commodity corporate buyers",
+      "metrics_focus": "Scope 3 emissions reduction, soil carbon sequestration per hectare, EUDR compliance verification, water stewardship m3/ton",
+      "accent_color": "#004D40",
+      "hashtags": [
+        "#ESG",
+        "#SustainableAg",
+        "#Scope3Emissions",
+        "#RegenerativeAg",
+        "#CarbonAccounting"
+      ]
+    }
+  ]
+}

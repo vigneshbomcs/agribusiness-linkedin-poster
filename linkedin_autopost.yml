@@ -1,0 +1,51 @@
+﻿name: Agribusiness LinkedIn Auto-Poster
+
+on:
+  schedule:
+    # Runs every 3 days at 03:30 UTC (09:00 AM IST)
+    - cron: '30 3 */3 * *'
+  workflow_dispatch: # Allows manual 1-click trigger from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright Browsers with Dependencies
+        run: npx playwright install --with-deps chromium
+
+      - name: Run LinkedIn Auto-Publisher
+        env:
+          LI_AT: ${{ secrets.LI_AT }}
+          JSESSIONID: ${{ secrets.JSESSIONID }}
+        run: node github_runner.js
+
+      - name: Upload Execution Screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linkedin-run-screenshots
+          path: output/*.png
+          if-no-files-found: ignore
+
+      - name: Commit and push updated pillar rotation state
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add agribusiness_config.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-advance agribusiness pillar rotation [skip ci]" && git push)
